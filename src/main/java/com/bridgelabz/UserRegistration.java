@@ -8,6 +8,9 @@ public class UserRegistration {
 
     Scanner sc = new Scanner(System.in);
 
+    /*UC1
+    enter valid first name
+     */
     public boolean validFirstName() {
 
         System.out.println("Enter First Name: ");
@@ -23,6 +26,10 @@ public class UserRegistration {
             System.out.println("First name is invalid..");
         return result;
     }
+    /*
+    UC2
+    Enter Valid Last name
+     */
 
     public boolean validLastName() {
 
@@ -40,6 +47,11 @@ public class UserRegistration {
         return result1;
     }
 
+    /*
+    UC 3
+    Enter valid Email
+     */
+
     public boolean validEmail() {
 
         System.out.println("Enter Email: ");
@@ -55,6 +67,9 @@ public class UserRegistration {
             System.out.println("Email is Invalid... ");
         return result2;
     }
+    /*UC4
+    Enter valid mobile number
+     */
 
     public boolean validMobileNumber() {
 
@@ -71,4 +86,24 @@ public class UserRegistration {
             System.out.println("Mobile number is Invalid... ");
             return result3;
         }
+
+        /*UC5
+        Password Rule 1: minimum 8 characters.
+         */
+
+    public boolean validPassword() {
+
+        System.out.println("Enter Password: ");
+        String MobileNumber = sc.next();
+        String regex4 = "^[a-zA-Z]{8,}$";
+        Pattern pattern4 = Pattern.compile(regex4);
+        Matcher matcher4 = pattern4.matcher(MobileNumber);
+        boolean result4 = matcher4.matches();
+
+        if (result4)
+            System.out.println("Password is valid... ");
+        else
+            System.out.println("Password is Invalid... ");
+        return result4;
+    }
     }
