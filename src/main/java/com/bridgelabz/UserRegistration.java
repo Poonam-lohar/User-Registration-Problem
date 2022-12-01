@@ -39,6 +39,7 @@ public class UserRegistration {
             System.out.println("Lastname is Invalid... ");
         return result1;
     }
+
     public boolean validEmail() {
 
         System.out.println("Enter Email: ");
@@ -55,5 +56,19 @@ public class UserRegistration {
         return result2;
     }
 
+    public boolean validMobileNumber() {
 
-}
+        System.out.println("Enter Mobile Number: ");
+        String MobileNumber = sc.next();
+        String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
+        Pattern pattern3 = Pattern.compile(regex3);
+        Matcher matcher3 = pattern3.matcher(MobileNumber);
+        boolean result3 = matcher3.matches();
+
+        if (result3)
+            System.out.println("Mobile number is valid... ");
+         else
+            System.out.println("Mobile number is Invalid... ");
+            return result3;
+        }
+    }
