@@ -39,4 +39,21 @@ public class UserRegistration {
             System.out.println("Lastname is Invalid... ");
         return result1;
     }
+    public boolean validEmail() {
+
+        System.out.println("Enter Email: ");
+        String Email = sc.next();
+        String regex2 = "^[a-zA-Z0-9]+([a-zA-Z0-9]+)*[@][a-zA-Z0-9]+([.][a-zA-Z]{2,4})$";
+        Pattern pattern2 = Pattern.compile(regex2);
+        Matcher matcher2 = pattern2.matcher(Email);
+        boolean result2 = matcher2.matches();
+
+        if (result2)
+            System.out.println("Email is valid... ");
+        else
+            System.out.println("Email is Invalid... ");
+        return result2;
+    }
+
+
 }
