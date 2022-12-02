@@ -106,4 +106,24 @@ public class UserRegistration {
             System.out.println("Password is Invalid... ");
         return result4;
     }
+    /*
+    UC6
+    Password Rule 2: Should have atleast 1 uppercase.
+     */
+
+    public boolean validUpperCasePassword() {
+
+        System.out.println("Enter Password: ");
+        String password = sc.next();
+        String regex5 = "^[A-Z]{1,}[a-zA-Z0-9]{7,}$";
+        Pattern pattern5 = Pattern.compile(regex5);
+        Matcher matcher5 = pattern5.matcher(password);
+        boolean result5 = matcher5.matches();
+
+        if (result5)
+            System.out.println("Password is valid... ");
+        else
+            System.out.println("Password is Invalid... ");
+        return result5;
+    }
     }
