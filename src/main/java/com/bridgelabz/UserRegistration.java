@@ -74,7 +74,7 @@ public class UserRegistration {
     public boolean validMobileNumber() {
 
         System.out.println("Enter Mobile Number: ");
-        String MobileNumber = sc.next();
+        String MobileNumber = sc.nextLine();
         String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
         Pattern pattern3 = Pattern.compile(regex3);
         Matcher matcher3 = pattern3.matcher(MobileNumber);
@@ -82,10 +82,10 @@ public class UserRegistration {
 
         if (result3)
             System.out.println("Mobile number is valid... ");
-         else
+        else
             System.out.println("Mobile number is Invalid... ");
-            return result3;
-        }
+        return result3;
+    }
 
         /*UC5
         Password Rule 1: minimum 8 characters.
@@ -126,4 +126,21 @@ public class UserRegistration {
             System.out.println("Password is Invalid... ");
         return result5;
     }
+
+    public boolean validNumericPassword() {
+
+        System.out.println("Enter Password: ");
+        String password = sc.next();
+        String regex6 = "^[A-Z]{1}+[a-zA-Z1-9]{6,}[1-9]{1}$";
+        Pattern pattern6 = Pattern.compile(regex6);
+        Matcher matcher6 = pattern6.matcher(password);
+        boolean result6 = matcher6.matches();
+
+        if (result6) {
+            System.out.println("Password is valid... ");
+        } else {
+            System.out.println("Password is Invalid... ");
+        }
+        return result6;
     }
+}

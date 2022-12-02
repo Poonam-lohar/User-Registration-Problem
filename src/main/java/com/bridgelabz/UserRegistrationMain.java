@@ -12,7 +12,8 @@ public class UserRegistrationMain {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:" +
                 "\nEnter 3: To validate Email:\nEnter 4: To validate Mobile Number:" +
-                "\nEnter 5: To validate Password Rule1:\nEnter 6: To validate Password Rule2:");
+                "\nEnter 5: To validate Password Rule1:\nEnter 6: To validate Password Rule2:" +
+                "\nEnter 7: To validate Password Rule3");
 
         switch (sc.nextInt()) {
             case 1:
@@ -32,6 +33,9 @@ public class UserRegistrationMain {
                 break;
             case 6:
                 user.validUpperCasePassword();
+                break;
+            case 7:
+                user.validNumericPassword();
                 break;
         }
     }
