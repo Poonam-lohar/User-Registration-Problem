@@ -126,6 +126,9 @@ public class UserRegistration {
             System.out.println("Password is Invalid... ");
         return result5;
     }
+    /*UC7
+    Atleast 1 numeric number in password
+     */
 
     public boolean validNumericPassword() {
 
@@ -142,5 +145,22 @@ public class UserRegistration {
             System.out.println("Password is Invalid... ");
         }
         return result6;
+    }
+
+    public boolean validSymbolPassword() {
+
+        System.out.println("Enter Password: ");
+        String password1 = sc.nextLine();
+        String regex7 = "^[A-Z]{1}+[a-zA-Z1-9]{6,}+[@]{1}[1-9]{1}$";
+        Pattern pattern7 = Pattern.compile(regex7);
+        Matcher matcher7 = pattern7.matcher(password1);
+        boolean result7 = matcher7.matches();
+
+        if (result7) {
+            System.out.println("Password is valid... ");
+        } else {
+            System.out.println("Password is Invalid... ");
+        }
+        return result7;
     }
 }
