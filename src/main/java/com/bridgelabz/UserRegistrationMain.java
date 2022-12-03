@@ -13,32 +13,36 @@ public class UserRegistrationMain {
         System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:" +
                 "\nEnter 3: To validate Email:\nEnter 4: To validate Mobile Number:" +
                 "\nEnter 5: To validate Password Rule1:\nEnter 6: To validate Password Rule2:" +
-                "\nEnter 7: To validate Password Rule3:\nEnter 8: To validate Password Rule3");
+                "\nEnter 7: To validate Password Rule3:\nEnter 8: To validate Password Rule3" +
+                "\nEnter 9: To validate Email Samples:");
 
         switch (sc.nextInt()) {
             case 1:
-                user.validFirstName();
+                user.validFirstName("Poonam");
                 break;
             case 2:
-                user.validLastName();
+                user.validLastName("Desai");
                 break;
             case 3:
-                user.validEmail();
+                user.validEmail("abc.xyz@bl.co.in");
                 break;
             case 4:
-                user.validMobileNumber();
+                user.validMobileNumber("91 7058835985");
                 break;
             case 5:
-                user.validPassword();
+                user.validPassword("Poonam15");
                 break;
             case 6:
-                user.validUpperCasePassword();
+                user.validUpperCasePassword("Poonamdesai");
                 break;
             case 7:
-                user.validNumericPassword();
+                user.validNumericPassword("Poonam5");
                 break;
             case 8:
-                user.validSymbolPassword();
+                user.validSymbolPassword("Poonam@5");
+                break;
+            case 9:
+                user.validEmailSamples("abc@gmail.com.com");
                 break;
         }
     }

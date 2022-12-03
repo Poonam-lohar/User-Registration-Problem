@@ -11,19 +11,12 @@ public class UserRegistration {
     /*UC1
     enter valid first name
      */
-    public boolean validFirstName() {
+    public boolean validFirstName(String name) {
 
-        System.out.println("Enter First Name: ");
-        String name = sc.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("First name is valid..");
-        else
-            System.out.println("First name is invalid..");
         return result;
     }
     /*
@@ -31,19 +24,13 @@ public class UserRegistration {
     Enter Valid Last name
      */
 
-    public boolean validLastName() {
+    public boolean validLastName(String lastName) {
 
-        System.out.println("Enter Last Name: ");
-        String lastName = sc.next();
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern1 = Pattern.compile(regex1);
         Matcher matcher1 = pattern1.matcher(lastName);
         boolean result1 = matcher1.matches();
 
-        if (result1)
-            System.out.println("Lastname is valid... ");
-        else
-            System.out.println("Lastname is Invalid... ");
         return result1;
     }
 
@@ -52,38 +39,26 @@ public class UserRegistration {
     Enter valid Email
      */
 
-    public boolean validEmail() {
+    public boolean validEmail(String Email) {
 
-        System.out.println("Enter Email: ");
-        String Email = sc.next();
-        String regex2 = "^[a-zA-Z0-9]+([a-zA-Z0-9]+)*[@][a-zA-Z0-9]+([.][a-zA-Z]{2,4})$";
+        String regex2 = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern2 = Pattern.compile(regex2);
         Matcher matcher2 = pattern2.matcher(Email);
         boolean result2 = matcher2.matches();
 
-        if (result2)
-            System.out.println("Email is valid... ");
-        else
-            System.out.println("Email is Invalid... ");
         return result2;
     }
     /*UC4
     Enter valid mobile number
      */
 
-    public boolean validMobileNumber() {
+    public boolean validMobileNumber(String MobileNumber) {
 
-        System.out.println("Enter Mobile Number: ");
-        String MobileNumber = sc.nextLine();
         String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
         Pattern pattern3 = Pattern.compile(regex3);
         Matcher matcher3 = pattern3.matcher(MobileNumber);
         boolean result3 = matcher3.matches();
 
-        if (result3)
-            System.out.println("Mobile number is valid... ");
-        else
-            System.out.println("Mobile number is Invalid... ");
         return result3;
     }
 
@@ -91,19 +66,13 @@ public class UserRegistration {
         Password Rule 1: minimum 8 characters.
          */
 
-    public boolean validPassword() {
+    public boolean validPassword(String Password) {
 
-        System.out.println("Enter Password: ");
-        String MobileNumber = sc.next();
-        String regex4 = "^[a-zA-Z]{8,}$";
+        String regex4 = "^[a-zA-Z0-9@.-_]{8,}$";
         Pattern pattern4 = Pattern.compile(regex4);
-        Matcher matcher4 = pattern4.matcher(MobileNumber);
+        Matcher matcher4 = pattern4.matcher(Password);
         boolean result4 = matcher4.matches();
 
-        if (result4)
-            System.out.println("Password is valid... ");
-        else
-            System.out.println("Password is Invalid... ");
         return result4;
     }
     /*
@@ -111,56 +80,44 @@ public class UserRegistration {
     Password Rule 2: Should have atleast 1 uppercase.
      */
 
-    public boolean validUpperCasePassword() {
+    public boolean validUpperCasePassword(String password) {
 
-        System.out.println("Enter Password: ");
-        String password = sc.next();
-        String regex5 = "^[A-Z]{1,}[a-zA-Z0-9]{7,}$";
+        String regex5 = "^[A-Z]{1,}[a-zA-Z0-9@]{7,}$";
         Pattern pattern5 = Pattern.compile(regex5);
         Matcher matcher5 = pattern5.matcher(password);
         boolean result5 = matcher5.matches();
-
-        if (result5)
-            System.out.println("Password is valid... ");
-        else
-            System.out.println("Password is Invalid... ");
         return result5;
+
     }
     /*UC7
     Atleast 1 numeric number in password
      */
 
-    public boolean validNumericPassword() {
+    public boolean validNumericPassword(String password) {
 
-        System.out.println("Enter Password: ");
-        String password = sc.next();
-        String regex6 = "^[A-Z]{1}+[a-zA-Z1-9]{6,}[1-9]{1}$";
+        String regex6 = "^[A-Z]{1}+[a-zA-Z1-9@]{6,}[1-9]{1}$";
         Pattern pattern6 = Pattern.compile(regex6);
         Matcher matcher6 = pattern6.matcher(password);
         boolean result6 = matcher6.matches();
-
-        if (result6) {
-            System.out.println("Password is valid... ");
-        } else {
-            System.out.println("Password is Invalid... ");
-        }
         return result6;
     }
 
-    public boolean validSymbolPassword() {
+    public boolean validSymbolPassword(String password1) {
 
-        System.out.println("Enter Password: ");
-        String password1 = sc.nextLine();
-        String regex7 = "^[A-Z]{1}+[a-zA-Z1-9]{6,}+[@]{1}[1-9]{1}$";
+        String regex7 = "^[A-Z]{1}+[a-zA-Z]{6,}+[@]{1}[1-9]{1}$";
         Pattern pattern7 = Pattern.compile(regex7);
         Matcher matcher7 = pattern7.matcher(password1);
         boolean result7 = matcher7.matches();
 
-        if (result7) {
-            System.out.println("Password is valid... ");
-        } else {
-            System.out.println("Password is Invalid... ");
-        }
         return result7;
+    }
+
+    public boolean validEmailSamples(String Email) {
+
+        String regex8 = "^[a-zA-Z0-9]+(@.+-_][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
+        Pattern pattern8 = Pattern.compile(regex8);
+        Matcher matcher8 = pattern8.matcher(Email);
+        boolean result8 = matcher8.matches();
+        return result8;
     }
 }
