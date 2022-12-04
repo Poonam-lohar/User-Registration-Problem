@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UserRegistrationMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationexception {
 
         System.out.println("Welcome To User Registration Problem....");
 
