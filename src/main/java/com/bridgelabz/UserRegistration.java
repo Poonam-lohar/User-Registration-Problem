@@ -4,6 +4,15 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+  /*
+  To validate all Use cases using Lambda Expression.
+  */
+
+@FunctionalInterface
+interface Validation {
+      boolean validate(String x) throws UserRegistrationexception;
+      }
+
 public class UserRegistration {
 
     Scanner sc = new Scanner(System.in);
@@ -11,24 +20,23 @@ public class UserRegistration {
     /*UC1
     enter valid first name
      */
-    public boolean validFirstName(String name) throws UserRegistrationexception {
+     Validation validateFirstName = (firstName) -> {
 
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(firstName);
         boolean result = matcher.matches();
         System.out.println(result);
         if (!result) {
             throw new UserRegistrationexception("first Name should start with a Cap and should have minimum 3 characters");
         } else
             return true;
-    }
+    };
     /*
     UC2
     Enter Valid Last name
      */
-
-    public boolean validLastName(String lastName) throws UserRegistrationexception {
+    Validation validateLastName = (lastName) -> {
 
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern1 = Pattern.compile(regex1);
@@ -40,14 +48,14 @@ public class UserRegistration {
         } else {
             return true;
         }
-    }
+    };
 
     /*
     UC 3
     Enter valid Email
      */
 
-    public boolean validEmail(String Email) throws UserRegistrationexception {
+    Validation validateEmail = (Email) -> {
 
         String regex2 = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern2 = Pattern.compile(regex2);
@@ -56,14 +64,15 @@ public class UserRegistration {
         System.out.println(result2);
         if (!result2) {
             throw new UserRegistrationexception("Enter valid Email");
-        } else
+        } else {
             return true;
     }
+    };
     /*UC4
     Enter valid mobile number
      */
 
-    public boolean validMobileNumber(String MobileNumber) throws UserRegistrationexception {
+    Validation validateMobileNumber = (MobileNumber) -> {
 
         String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
         Pattern pattern3 = Pattern.compile(regex3);
@@ -74,13 +83,13 @@ public class UserRegistration {
             throw new UserRegistrationexception("Enter the Valid Mobile number with county code.");
         } else
             return true;
-    }
+    };
 
         /*UC5
         Password Rule 1: minimum 8 characters.
          */
 
-    public boolean validPassword(String Password) throws UserRegistrationexception {
+    Validation validatePassword = (Password) -> {
 
         String regex4 = "^[a-zA-Z0-9@.-_]{8,}$";
         Pattern pattern4 = Pattern.compile(regex4);
@@ -91,7 +100,7 @@ public class UserRegistration {
             throw new UserRegistrationexception("Password must have 8 character.");
         } else
             return true;
-    }
+    };
 
 
     /*
@@ -99,7 +108,7 @@ public class UserRegistration {
     Password Rule 2: Should have atleast 1 uppercase.
      */
 
-    public boolean validUpperCasePassword(String password) throws UserRegistrationexception {
+    Validation validateUpperCasePassword = (password) -> {
 
         String regex5 = "^[A-Z]{1,}[a-zA-Z0-9@]{7,}$";
         Pattern pattern5 = Pattern.compile(regex5);
@@ -111,12 +120,11 @@ public class UserRegistration {
         } else
         return true;
 
-    }
+    };
     /*UC7
     Atleast 1 numeric number in password
      */
-
-    public boolean validNumericPassword(String password) throws UserRegistrationexception {
+    Validation validateNumericPassword = (password) -> {
 
         String regex6 = "^[A-Z]{1}+[a-zA-Z1-9@]{6,}[1-9]{1}$";
         Pattern pattern6 = Pattern.compile(regex6);
@@ -127,12 +135,12 @@ public class UserRegistration {
             throw new UserRegistrationexception(" Atleast 1 numeric number in password");
         } else
             return true;
-    }
+    };
     /*UC8
     Password contains atleast 1 Symbol
     */
 
-    public boolean validSymbolPassword(String password1) throws UserRegistrationexception {
+    Validation validateSymbolPassword = password1 -> {
 
         String regex7 = "^[A-Z]{1}+[a-zA-Z]{6,}+[@]{1}[1-9]{1}$";
         Pattern pattern7 = Pattern.compile(regex7);
@@ -143,13 +151,12 @@ public class UserRegistration {
             throw new UserRegistrationexception("Password contains atleast 1 Symbol");
         } else
             return true;
-    }
+    };
     /*
     UC9
     valid email samples
      */
-
-    public boolean validEmailSamples(String Email) throws UserRegistrationexception {
+    Validation validateEmail1 = (String Email) -> {
 
         String regex8 = "^[a-zA-Z0-9]+(@.+-_][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
         Pattern pattern8 = Pattern.compile(regex8);
@@ -160,5 +167,5 @@ public class UserRegistration {
             throw new UserRegistrationexception("valid email samples");
         } else
         return true;
-    }
+    };
 }

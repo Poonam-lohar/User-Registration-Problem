@@ -18,31 +18,31 @@ public class UserRegistrationMain {
 
         switch (sc.nextInt()) {
             case 1:
-                user.validFirstName("Poonam");
+                user.validateFirstName.validate("Poonam");
                 break;
             case 2:
-                user.validLastName("Desai");
+                user.validateLastName.validate("Desai");
                 break;
             case 3:
-                user.validEmail("abc.xyz@bl.co.in");
+                user.validateEmail.validate("abc.xyz@bl.co.in");
                 break;
             case 4:
-                user.validMobileNumber("91 7058835985");
+                user.validateMobileNumber.validate("91 7058835985");
                 break;
             case 5:
-                user.validPassword("Poonam15");
+                user.validatePassword.validate("Poonam15");
                 break;
             case 6:
-                user.validUpperCasePassword("Poonamdesai");
+                user.validateUpperCasePassword.validate("Poonamdesai");
                 break;
             case 7:
-                user.validNumericPassword("Poonam5");
+                user.validateNumericPassword.validate("Poonam5");
                 break;
             case 8:
-                user.validSymbolPassword("Poonam@5");
+                user.validateSymbolPassword.validate("Poonam@5");
                 break;
             case 9:
-                user.validEmailSamples("abc@gmail.com.com");
+                user.validateEmail1.validate("abc@gmail.com.com");
                 break;
         }
     }
